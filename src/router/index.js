@@ -8,7 +8,12 @@ const routes = [
   // tutorialsList.vue : Tutorial 목록 화면 
   {
     path: '/',
-    alias:"/tutorials",
+    alias: '/home',
+    name: '/home',
+    component:  ()=> import('@/views/HomeView.vue')
+  },
+  {
+    path:"/tutorials",
     name: 'tutorials',
     component: ()=> import('@/components/TutorialsList')
   },
@@ -26,7 +31,13 @@ const routes = [
     path: '/add',
     name: '/add',
     component:  ()=> import('@/components/AddTutorial')
-  }
+  },
+  {
+    path: '/complain',
+    name: '/complain',
+    component:  ()=> import('@/views/ComplainView.vue')
+  },
+
 ]
 
 const router = new VueRouter({
